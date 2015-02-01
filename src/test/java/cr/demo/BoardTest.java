@@ -40,7 +40,7 @@ public class BoardTest {
     }
 
     @Test
-    public void aTwoSingleCellsFarFromEachOtherShouldHaveZeroNeighbors() throws Exception {
+    public void twoCellsFarFromEachOtherShouldHaveZeroNeighbors() throws Exception {
         // given
         Board board = new Board();
         board.addCell(new Cell(0, 0));
