@@ -1,0 +1,33 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+configure(install.repositories.mavenInstaller) {
+    pom.project {
+        version '0.1'
+        groupId 'cr.demo'
+        artifactId 'game-of-life'
+        inceptionYear '2013'
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: 'file://~/.m2/')
+        }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
+
+dependencies {
+    testCompile 'junit:junit:4.11'
+}
